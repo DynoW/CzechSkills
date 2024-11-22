@@ -15,7 +15,7 @@ body {
 
 #bg-div {
     /* Add a background image */
-    background-image: url('bg.png');
+    background-image: url('../img/bg.png');
     background-size: cover;
     background-position: center;
 }
