@@ -1,0 +1,3 @@
+*.zip
+module-a/node_modules
+module-b/node_modules
