@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Inc. | Discover</title>
+    <meta name="description"
+        content="Game Inc. is a non-profit game studio dedicated to creating immersive and engaging games for gamers around the world. Join us on an epic journey through mystical lands, dystopian futures, and magical realms.">
+    <link href="output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-blue-900">
+    <div id="bg-div" class="flex flex-row justify-center">
+        <main class="h-screen container">
+            <nav class="flex flex-row justify-between pt-4 mx-4">
+                <!-- Logo -->
+                <div class="text-yellow-400">
+                    <img src="logo.png" alt="logo" class="h-20 w-20" />
+                </div>
+                <!-- Navigation Links -->
+                <div
+                    class="hidden mt-4 md:flex flex-col md:flex-row gap-4 md:gap-6 text-yellow-400 md:text-xl align-middle">
+                    <a href="#Discover">
+                        Discover
+                    </a>
+                    <a href="#UpcomingGames">
+                        Games
+                    </a>
+                    <a href="#Contact">
+                        Contact
+                    </a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden fixed right-4 flex items-center">
+                    <button id="mobile-menu-button" class="text-yellow-400 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+                <!-- Side Menu -->
+                <div id="side-menu"
+                    class="fixed z-20 left-0 top-0 h-full w-64 bg-gray-800 text-yellow-400 transform -translate-x-full transition-transform duration-300">
+                    <div class="flex flex-col p-4">
+                        <a href="#Discover" class="py-2">Discover</a>
+                        <a href="#UpcomingGames" class="py-2">Games</a>
+                        <a href="#Contact" class="py-2">Contact</a>
+                    </div>
+                </div>
+                <script>
+                    document.getElementById('mobile-menu-button').addEventListener('click', function () {
+                        var menu = document.getElementById('side-menu');
+                        menu.classList.toggle('-translate-x-full');
+                    });
+                </script>
+            </nav>
+            <!-- Main Heading -->
+            <div id="Discover" class="text-center mt-10 md:mt-20">
+                <div class="text-center text-amber-600 text-3xl md:text-5xl">
+                    <h1>Make the impossible,</h1>
+                    <h2>conquer the world!</h2>
+                </div>
+                <button class="mt-20 md:mt-24 p-4 bg-red-500 opacity-80 rounded-2xl md:text-2xl text-amber-100">
+                    Start the journey >
+                </button>
+            </div>
+            <!-- Scroll Down Indicator -->
+            <div class="text-center absolute bottom-0 left-1/2 transform -translate-x-1/2">
+                <p>Discover more!</p>
+                <p>↓</p>
+            </div>
+            <div id="countdown" class="absolute w-64 text-center md:left-4 left-1/2 transform md:transform-none -translate-x-1/2 bottom-20 md:bottom-4 text-amber-100"></div>
+            <script>
+                // Set the date we're counting down to
+                var countDownDate = new Date("March 15, 2025 00:00:00").getTime();
+
+                // Update the count down every 1 second
+                var x = setInterval(function () {
+
+                    // Get today's date and time
+                    var now = new Date().getTime();
+
+                    // Find the distance between now and the count down date
+                    var distance = countDownDate - now;
+
+                    // Time calculations for days, hours, minutes and seconds
+                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    // Display the result in the element with id="countdown"
+                    document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+                        + minutes + "m " + seconds + "s ";
+
+                    // If the count down is over, write some text 
+                    if (distance < 0) {
+                        clearInterval(x);
+                        document.getElementById("countdown").innerHTML = "Launched!";
+                        alert("The event has started!");
+                    }
+                }, 1000);
+            </script>
+        </main>
+    </div>
+    <!-- Upcoming Games Section -->
+    <div id="UpcomingGames" class="p-6 bg-gray-800 rounded-lg text-white">
+        <h2 class="text-4xl mb-4">Upcoming Games</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-gray-700 p-4 rounded-lg">
+                <img src="s1.png" alt="Game 1" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h3 class="text-2xl mb-2">Eternal Odyssey</h3>
+                <p class="mb-2">Embark on an epic journey through mystical lands, battling fierce creatures and
+                    uncovering ancient secrets.</p>
+                <ul class="list-disc list-inside">
+                    <li>Open-world exploration</li>
+                    <li>Dynamic weather system</li>
+                    <li>Rich storyline</li>
+                </ul>
+                <p class="mt-2 text-yellow-400">Release Date: March 15, 2025</p>
+            </div>
+            <div class="bg-gray-700 p-4 rounded-lg">
+                <img src="s2.png" alt="Game 2" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h3 class="text-2xl mb-2">Cyber Rebellion</h3>
+                <p class="mb-2">Dive into a dystopian future where you must hack, fight, and outsmart your enemies to
+                    reclaim the city.</p>
+                <ul class="list-disc list-inside">
+                    <li>High-tech gadgets</li>
+                    <li>Intense combat</li>
+                    <li>Multiple endings</li>
+                </ul>
+                <p class="mt-2 text-yellow-400">Release Date: June 22, 2025</p>
+            </div>
+            <div class="bg-gray-700 p-4 rounded-lg">
+                <img src="s3.jpeg" alt="Game 3" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h3 class="text-2xl mb-2">Mystic Quest</h3>
+                <p class="mb-2">Solve intricate puzzles and uncover hidden treasures in a world filled with magic and
+                    wonder.</p>
+                <ul class="list-disc list-inside">
+                    <li>Challenging puzzles</li>
+                    <li>Beautifully crafted environments</li>
+                    <li>Enchanting soundtrack</li>
+                </ul>
+                <p class="mt-2 text-yellow-400">Release Date: September 10, 2025</p>
+            </div>
+        </div>
+    </div>
+    <!-- Description Section -->
+    <div id="Description" class="bg-gray-800 text-white text-center p-4">
+        <div class="bg-slate-900 rounded-lg">
+            <p class="text-amber-700 p-6">
+                Our mission: Game Inc. is a non-profit game studio dedicated to creating immersive and engaging games
+                for gamers
+                around the world. Join us on an epic journey through mystical lands, dystopian futures, and magical
+                realms.
+            </p>
+        </div>
+    </div>
+    <!-- Contact Section -->
+    <footer id="Contact" class="bg-gray-800 text-white text-center p-4 text-sm">
+        <p>Contact us:</p>
+        <p class="text-xs"><a href="mailto:games@inc.com">games@inc.com</a> | Games Inc. | All rights reserved</p>
+    </footer>
+</body>
+
+</html>

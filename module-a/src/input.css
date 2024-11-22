@@ -1,0 +1,21 @@
+/* Default tailwind imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    @apply text-white;
+    /* Import font */
+    font-family: "Press Start 2P", system-ui;
+    /* Set the font weight to normal */
+    font-weight: 400;
+    font-style: normal;
+}
+
+#bg-div {
+    /* Add a background image */
+    background-image: url('bg.png');
+    background-size: cover;
+    background-position: center;
+}
