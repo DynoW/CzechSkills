@@ -1,9 +1,13 @@
 {
   "devDependencies": {
     "tailwindcss": "^3.4.15"
+  },
+  "scripts": {
+    "start": "tailwindcss -i ./src/assets/css/input.css -o ./src/assets/css/output.css --watch",
+    "serve": "npx serve src",
+    "dev": "concurrently \"npm run start\" \"npm run serve\""
+  },
+  "dependencies": {
+    "concurrently": "^9.1.0"
   }
-,
-"scripts": {
-  "start": "tailwindcss -i ./src/input.css -o ./src/output.css --watch"
-}
 }
